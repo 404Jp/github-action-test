@@ -25,5 +25,7 @@ jobs:
       - name: "mensajeeee"
         run: echo "hola mundos" 
       - name: "variables de entorno"
-        if: ${{ env.platform == 'aws'}}
+        #if: ${{ env.platform == 'aws'}}
         run: echo "plataforma $platform " echo "variable de region $region" echo "Numero de cuenta ${{ env.account}}" 
+      - name: "variables por defecto"
+        run: echo "Eventos ${{toJson(github.event)}}" 
