@@ -20,10 +20,12 @@ jobs:
       platform: aws
       region: us-est-1
       account: 213441
+      user: ${{secrets.USER}}
+      pass: ${{secrets.PASS}}
     runs-on: ubuntu-latest
     steps:
-      - name: "mensajeeee"
-        run: echo "hola mundos" 
+      - name: "SECRET"
+        run: echo "Este es el user ${{env.user}} y pass ${{env.pass}}" 
       - name: "variables de entorno"
         #if: ${{ env.platform == 'aws'}}
         run: echo "plataforma $platform " echo "variable de region $region" echo "Numero de cuenta ${{ env.account}}" 
